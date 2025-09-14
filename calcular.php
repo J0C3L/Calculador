@@ -1,4 +1,11 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo del peso</title>
+    <link rel="stylesheet" href="Estilos/Estilos.css">
+    <?php
 session_start();
 include("conexion.php");
 
@@ -43,8 +50,27 @@ if (!empty($condiciones)) {
     $rutina .= " (Atención especial a condición: $condiciones)";
 }
 ?>
-<h2>Resultado IMC</h2>
-<p>Tu IMC es: <?php echo round($imc, 2); ?></p>
-<p><b>Sugerencia de dieta:</b> <?php echo $dieta; ?></p>
-<p><b>Rutina recomendada:</b> <?php echo $rutina; ?></p>
-<a href="index.php">Volver</a> | <a href="historial.php">Ver historial</a>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <p>Calculadora para IMS</p>
+        <h2>Bienvenido <?php echo $_SESSION['nombre']; ?></h2>
+    </header>
+    <section class="tablahistorial">
+            <h2>Resultado IMC</h2>
+        <p>Tu IMC es: <?php echo round($imc, 2); ?></p>
+        <p><b>Sugerencia de dieta:</b> <?php echo $dieta; ?></p>
+        <p><b>Rutina recomendada:</b> <?php echo $rutina; ?></p>
+        <a href="index.php">Volver</a> <a href="historial.php">Ver historial</a>
+    </section>
+<footer>
+        <ul>
+            <li><p>Calculadora inteligente para el cuidado del cuerpo</p></li>
+            <li><p>Hecho por: Cristofheer Ceballos & Jose David Garcia</p></li>
+            <li><p>Proyecto de aula usando validacion y verificacion</p></li>
+        </ul>
+    </footer>
+</body>
+</html>
+

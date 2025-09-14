@@ -1,8 +1,16 @@
-<?php
-session_start();
-include("conexion.php");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Estilos/Estilos.css">
+    <title>Login </title>
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+<?php
+    session_start();
+    include("conexion.php");
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
@@ -22,11 +30,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Usuario no encontrado";
     }
-}
+    }
 ?>
-<form method="POST">
-    Usuario: <input type="text" name="usuario" required><br>
-    Contraseña: <input type="password" name="contrasena" required><br>
-    <button type="submit">Ingresar</button>
-</form>
-<a href="registro.php">Registrarse</a>
+</head>
+<body>
+    <header>
+        <div class="logo"></div>
+        <p>Calculadora para IMS</p>
+    </header>
+
+    <section class="cuadrologin">
+        <p>Bienvenido</p>
+        <form method="POST">
+            <p>Usuario:</p>
+            <input type="text" name="usuario" required><br>
+            <p>Contraseña:</p> 
+            <input type="password" name="contrasena" required><br>
+            <button type="submit">Ingresar</button>
+        </form>
+        <a href="registro.php">Registrarse</a>
+    </section>
+
+    <footer>
+        <ul>
+            <li><p>Calculadora inteligente para el cuidado del cuerpo</p></li>
+            <li><p>Hecho por: Cristofheer Ceballos & Jose David Garcia</p></li>
+            <li><p>Proyecto de aula usando validacion y verificacion</p></li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
+
