@@ -4,32 +4,67 @@ Estilos Generales del sitio web
 *{
     margin: 0;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
     
-    }
-    header{
-        background-color: #556B2F;
-        padding: 20px;
-        color: #fff;
-        font-weight: bold;
-    }
+    header {
+  background-color: #4b6332; /* verde elegante */
+  color: #fff;
+  padding: 15px 30px;
+  text-align: left;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
-    body{
-        background-color: #FFFFF0;
-    }
+/* El texto del header */
+header p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
 
-    footer{
-        background-color: #556B2F;
-        padding: 20px;  
-        color: #fff;
-        font-weight: bold;
-    }
-        footer ul{
-            display: flex;
-            list-style: none;
-            text-decoration: none;
-            text-align: center;
-            justify-content: space-between;
-        }
+    footer {
+  background-color: #4b6332; /* mismo verde que el header */
+  color: #fff;
+  padding: 15px 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4b6332;
+  color: #fff;
+  padding: 12px 24px;
+  z-index: 999;
+}
+
+/* Evita que el contenido quede oculto por el footer */
+main {
+  padding-bottom: 70px; /* ajustar según la altura del footer */
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;               /* organiza en fila */
+  justify-content: space-between; /* reparte el espacio */
+  align-items: center;
+  flex-wrap: wrap;             /* si no cabe, se baja */
+}
+
+footer li {
+  margin: 5px 10px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
 
 /*
 Estilos para el Login 
@@ -53,12 +88,79 @@ Estilos para el Login
         margin-top: 10px;
     }
 
-    .cuadrologin input{
-        border: none;
-        padding: 10px;
-        background: transparent;
-        border-bottom: 2px solid #000;
-    }
+    /* Estilo del cuadro de login */
+.cuadrologin {
+  max-width: 350px;
+  margin: 80px auto;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Título */
+.cuadrologin > p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Etiquetas */
+.cuadrologin p {
+  margin: 10px 0 5px;
+  font-weight: 600;
+  text-align: left;
+  color: #444;
+}
+
+/* Inputs */
+.cuadrologin input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.cuadrologin input:focus {
+  border-color: #4b6332;
+}
+
+/* Botón */
+.cuadrologin button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #4b6332;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cuadrologin button:hover {
+  background-color: #3a4e27;
+}
+
+/* Enlace de registro */
+.cuadrologin a {
+  display: inline-block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #4b6332;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cuadrologin a:hover {
+  color: #2e3b1c;
+}
 
     .cuadrologin  button{
         margin-top: 10px;
@@ -86,16 +188,75 @@ Estilos para el Login
     Estilos para Index
 */
 
-.formcalcu{
-    display: grid;
-    background: #F5F5F5;
-    border-radius: 20px;
-    border: 2px solid #fff;
-    box-shadow: 10px #f1f1f1;
-    padding: 100px;
-    margin: 100px 400px 100px 400px;
-    justify-content: center;
-    align-items: center;
+.formcalcu {
+    max-width: 400px;                  /* ancho máximo, se adapta a pantallas pequeñas */
+    margin: 60px auto;                 /* lo centra horizontalmente */
+    padding: 30px 25px;                /* espacio interno */
+    background: #fff;                  /* fondo blanco limpio */
+    border-radius: 12px;               /* bordes redondeados */
+    border: 1px solid #e0e0e0;         /* borde sutil */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* sombra suave */
+    text-align: center;                /* centra el texto */
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* título */
+.formcalcu h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* etiquetas y inputs */
+.formcalcu form {
+    display: flex;
+    flex-direction: column; /* apila los elementos */
+    gap: 15px;              /* espacio entre campos */
+}
+
+.formcalcu input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: border 0.2s;
+}
+
+.formcalcu input:focus {
+    border-color: #4b6332;
+}
+
+/* botón */
+.formcalcu button {
+    padding: 10px;
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.formcalcu button:hover {
+    background: #219150;
+}
+
+/* enlaces */
+.formcalcu a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #4b6332;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.formcalcu a:hover {
+    color: #2c3e20;
 }
 
 
@@ -103,50 +264,38 @@ Estilos para el Login
     Estilos para historial
 */
 
-.tablahistorial{
-    display: grid;
-    background: #F5F5F5;
-    border-radius: 20px;
-    border: 2px solid #fff;
-    box-shadow: 10px #f1f1f1;
-    padding: 100px;
-    margin: 100px 400px 100px 400px;
-    justify-content: center;
-    align-items: center;
-}
-
-a{
-    text-decoration: none;
-    margin-top: 10px;
-    cursor:pointer;
-    text-transform: uppercase;
-    background-color: #f1f1f1;
-    padding: 10px;
+.tablahistorial {
+    max-width: 800px;                 /* ancho máximo */
+    margin: 60px auto;                 /* centrado */
+    padding: 30px;
+    background: #fff;                  /* fondo blanco */
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     text-align: center;
-    color: #000;
-    font-weight: bold;
-}
-a:hover{
-    font-weight: bold;
-    color: #fff;
-    background-color: #556B2F;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/*
-    Estilo de la tabla
-*/
+.tablahistorial h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+    font-weight: 700;
+}
 
+/* tabla */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
+  font-size: 15px;
+  border-radius: 8px;
+  overflow: hidden; /* bordes redondeados también para tabla */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 thead tr {
-  background-color: #009879;
+  background-color: #4b6332; /* mismo verde que el header */
   color: #ffffff;
   text-align: left;
 }
@@ -157,13 +306,31 @@ th, td {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f3f3f3;
+  background-color: #f9f9f9;
 }
 
 tbody tr:hover {
-  background-color: #f1f1f1;
+  background-color: #eef5e9;
 }
 
 td {
   color: #333333;
+}
+
+/* enlace volver */
+.tablahistorial a {
+    display: inline-block;
+    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: #27ae60;
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.tablahistorial a:hover {
+    background-color: #219150;
 }

@@ -35,7 +35,6 @@
 </head>
 <body>
     <header>
-        <div class="logo"></div>
         <p>Calculadora para IMS</p>
     </header>
 
